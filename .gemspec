@@ -1,4 +1,5 @@
 Gem::Specification.new do |s|
+  s.platform    = Gem::Platform::RUBY
   s.name        = 'encryptzator'
   s.version     = '0.0.1'
   s.date        = '2014-08-17'
