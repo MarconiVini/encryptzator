@@ -1,12 +1,23 @@
-Gem::Specification.new do |s|
-  s.name        = 'encryptzator'
-  s.version     = '0.0.1'
-  s.date        = '2014-08-17'
-  s.summary     = "simple two-way encrypt and decrypt gem!"
-  s.description = "A simple hello world gem"
-  s.authors     = ["Marcos Vinícius Cardoso Santini"]
-  s.email       = 'msantini@ciandt.com'
-  s.files       = ["lib/encryptzator.rb"]
-  s.homepage    = 'http://rubygems.org/gems/encryptzator'
-  s.license     = 'MIT'
+# coding: utf-8
+lib = File.expand_path('../lib', __FILE__)
+$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
+require 'encryptzator/version'
+
+Gem::Specification.new do |spec|
+  spec.name          = "encryptzator"
+  spec.version       = Encryptzator::VERSION
+  spec.authors       = ["Marcos Santini"]
+  spec.email         = ["cardosounicamp@gmail.com"]
+  spec.summary       = %q{TODO: Write a short summary. Required.}
+  spec.description   = %q{TODO: Write a longer description. Optional.}
+  spec.homepage      = ""
+  spec.license       = "MIT"
+
+  spec.files         = `git ls-files -z`.split("\x0")
+  spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
+  spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
+  spec.require_paths = ["lib"]
+
+  spec.add_development_dependency "bundler", "~> 1.7"
+  spec.add_development_dependency "rake", "~> 10.0"
 end
