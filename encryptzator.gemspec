@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = Encryptzator::VERSION
   spec.authors       = ["Marcos Santini"]
   spec.email         = ["cardosounicamp@gmail.com"]
-  spec.summary       = %q{TODO: Write a short summary. Required.}
-  spec.description   = %q{TODO: Write a longer description. Optional.}
+  spec.summary       = %q{Short lib to encrypt and decrypt messages}
+  spec.description   = %q{As a user I'd like to have an way to encrypt and decrypt my messages secretly}
   spec.homepage      = ""
   spec.license       = "MIT"
 
