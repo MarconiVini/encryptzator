@@ -62,9 +62,9 @@ class Encryptzator
   #the password key returning only the string decoded
   def decrypt_message_utf8(encoded_message, pass_key)
     pair = encoded_message.split("((o))")
-    iv = Base64.decode64(pair.first).encode('ascii-8bit')
-    encrypt_message = Base64.decode64(pair.last).encode('ascii-8bit')
-    decrypt_message({random_pass: pass_key, iv: iv, encrypted_message: encrypt_message})
+    iv = Base64.decode64(pair.first.encode('ascii-8bit'))
+    encrypt_message = Base64.decode64(pair.last.encode('ascii-8bit'))
+    decrypt_message({random_pass: pass_key, iv: iv, encrypted_message: encrypt_message}).encode('utf-8')
   end 
 
 

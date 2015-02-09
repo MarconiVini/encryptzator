@@ -16,6 +16,19 @@ describe Encryptzator do
       expect(message_hash[:encrypted_message].encoding.to_s).to eq "ASCII-8BIT"
       expect(message_hash[:iv]).not_to be nil
     end
+
+    describe "utf-8" do
+      it "return string is utf-8" do
+        message_hash = encryp.encrypt_message_utf8(message, my_pass)
+        expect(message_hash).not_to be nil
+        expect(message_hash.encoding.to_s).to eq "UTF-8"
+      end
+
+      it "has a string separator" do
+        message_hash = encryp.encrypt_message_utf8(message, my_pass)
+        expect(message_hash).to include "((o))"
+      end
+    end
   end
 
   describe 'Decrypting' do
@@ -56,6 +69,10 @@ describe Encryptzator do
 
     it "should decrypt message" do
       expect(encryp.decrypt_message_utf8(encrypt_message, my_pass)).to be_eql message
+    end
+
+    it "message shuld be utf-8" do
+      expect(encryp.decrypt_message_utf8(encrypt_message, my_pass).encoding.to_s).to eql 'UTF-8'
     end
   end
   
