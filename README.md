@@ -25,7 +25,8 @@ The coded message have two very important messages:
 Those two pieces of information should be kept in secrect, and they hold the keys to unlock the message secret:
 
     my_pass = "a random pass"
-    decoded_message = cipher { random_pass: my_pass, iv: coded_message[:iv], encrypted_message: coded_message[:encrypted_message]}
+    decoded_message = cipher { random_pass: my_pass, iv: coded_message[:iv], 
+      encrypted_message: coded_message[:encrypted_message]}
 
     puts decoded_message 
     =>"My very secret message"
